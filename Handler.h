@@ -18,7 +18,7 @@ class Handler{
         //handle user event
         virtual void handleEvent(const sf::Event& e) = 0;
         //handle logical operations
-        virtual void handleLogic() = 0;
+        virtual void handleLogic(const sf::Time& time) = 0;
         //draw interface
         virtual void handleDrawing() const = 0;
     protected:
