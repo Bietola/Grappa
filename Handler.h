@@ -25,7 +25,7 @@ class Handler{
         // handle logical operations
         virtual void handleLogic(const sf::Time& time) = 0;
         // draw interface
-        virtual void handleDrawing() = 0;
+        virtual void handleDrawing() const = 0;
 
     protected:
         // window on which the interface is shown
