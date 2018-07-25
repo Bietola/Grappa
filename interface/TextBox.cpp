@@ -87,7 +87,7 @@ void gr::TextBox::parentDraw(sf::RenderTarget& target, sf::RenderStates states) 
                 //get texture rect
                 const auto& tRect = glyph.textureRect;
                 //convert glyph into vertex quad and set text color
-				auto& color = mTextInfo.color;
+                auto& color = mTextInfo.color;
                 mVertices[vj*4]      = sf::Vertex({bRect.left, bRect.top}, color,                               {tRect.left, tRect.top});
                 mVertices[vj*4 + 1]  = sf::Vertex({bRect.left + bRect.width, bRect.top}, color,                 {tRect.left + tRect.width, tRect.top});
                 mVertices[vj*4 + 2]  = sf::Vertex({bRect.left + bRect.width, bRect.top + bRect.height}, color,   {tRect.left + tRect.width, tRect.top + tRect.height});
