@@ -2,22 +2,21 @@
 
 #include <SFML/Graphics.hpp>
 
-///Handler base class
-class Handler{
+class GameState {
     public:
         // constructor
-        Handler(sf::RenderWindow& window): mWindow(&window) {}
+        GameState(sf::RenderWindow& window): mWindow(&window) {}
 
         // virtual destructor
-        virtual ~Handler() {}
+        virtual ~GameState() {}
 
-        // deallocate given handler and change it to point to the next one
-        static void change(Handler*& handler);
+        // deallocate given gstate and change it to point to the next one
+        static void change(GameState*& gstate);
 
         /// setters
-        // sets next handler only if current next handler is null
+        // sets next gstate only if current next gstate is null
         // returns success
-        bool setNext(Handler* handler);
+        bool setNext(GameState* gstate);
 
         /// interface functions
         // handle user event
@@ -32,6 +31,6 @@ class Handler{
         sf::RenderWindow* mWindow;
 
     private:
-        // next handler to be used
-        static Handler* mNext;
+        // next gstate to be used
+        static GameState* mNext;
 };
